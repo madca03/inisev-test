@@ -87,10 +87,11 @@
       width: 70%;
       height: 60%;
       display: grid;
-      grid-template-columns: 30% 1fr;
+      grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
       background-color: white;
       border-radius: 1rem;
       position: relative;
+      overflow: hidden;
     }
 
     &__image {

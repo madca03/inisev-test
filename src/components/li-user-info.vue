@@ -35,5 +35,15 @@
       justify-content: center;
       align-items: center;
     }
+
+    &__text {
+      word-break: break-all;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .li-user-info {
+      font-size: 3rem;
+    }
   }
 </style>

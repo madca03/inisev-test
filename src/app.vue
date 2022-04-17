@@ -40,6 +40,16 @@
     font-size: 62.5%;
   }
 
-  #app {
+  @media (max-width: 1440px) {
+    html {
+      font-size: 50%;
+    }
   }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 40%;
+    }
+  }
+
 </style>
