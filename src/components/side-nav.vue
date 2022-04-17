@@ -6,7 +6,8 @@
                  :key="item.id"
                  :text="item.label"/>
     <div class="side-nav__spacer"/>
-    <div class="side-nav__logout">
+    <div class="side-nav__logout"
+         @click="doLogout">
       <i class="fa fa-sign-out" aria-hidden="true"></i>
       <div>Admin</div>
     </div>
@@ -17,10 +18,21 @@
   import NavMenus from '@/references/nav-menus';
   import LiSideNav from '@/components/li-side-nav'
   import SideNavHeader from '@/components/side-nav-header'
+  import Routes from '@/references/route-constants'
 
   export default {
     name: "side-nav",
     components: {LiSideNav, SideNavHeader},
+    methods: {
+      doLogout() {
+        this.goToLoginPage()
+      },
+      goToLoginPage() {
+        this.$router.push({
+          name: Routes.ROUTE_LOGIN
+        })
+      }
+    },
     navMenus: NavMenus
   }
 </script>

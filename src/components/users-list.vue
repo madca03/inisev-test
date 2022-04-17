@@ -3,22 +3,28 @@
     <div class="users-list__header">
       Users
     </div>
-    <div class="users-list__users">
-      <card-user v-for="user in users"
-                 :key="user.id"
-                 :user="user"/>
-    </div>
+
+    <loading-indicator v-if="isLoading"/>
+    <template v-else>
+      <div class="users-list__users">
+        <card-user v-for="user in users"
+                   :key="user.id"
+                   :user="user"/>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
   import CardUser from '@/components/card-user';
+  import LoadingIndicator from '@/components/loading-indicator';
 
   export default {
     name: "users-list",
-    components: {CardUser},
+    components: {LoadingIndicator, CardUser},
     props: {
-      users: {type: Array, default: () => []}
+      users: {type: Array, default: () => []},
+      isLoading: {type: Boolean, default: false}
     }
   }
 </script>
@@ -27,6 +33,10 @@
   .users-list {
     padding: 4rem;
     margin-left: 30rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 4rem;
+    min-height: 100vh;
 
     &__header {
       font-size: 6rem;
@@ -34,7 +44,6 @@
       text-decoration: underline;
       text-transform: uppercase;
       text-align: right;
-      margin-bottom: 4rem;
     }
 
     &__users {

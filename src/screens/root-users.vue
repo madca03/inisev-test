@@ -1,7 +1,8 @@
 <template>
   <div class="root-users">
     <side-nav class="root-users__side-nav"/>
-    <users-list :users="users"/>
+    <users-list :users="users"
+                :is-loading="isLoading"/>
   </div>
 </template>
 

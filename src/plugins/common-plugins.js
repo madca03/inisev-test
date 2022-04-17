@@ -10,6 +10,9 @@ export default {
           setTimeout(() => {
             this.$store.commit(MUTATE_SHOW_ERROR_NOTIFICATION, {showError: false})
           }, duration)
+        },
+        $hideErrorNotification() {
+          this.$store.commit(MUTATE_SHOW_ERROR_NOTIFICATION, {showError: false})
         }
       }
     })

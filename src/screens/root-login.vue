@@ -26,7 +26,6 @@
 </template>
 
 <script>
-  import StringUtil from '@/util/string-util'
   import AppConstants from '@/references/app-constants'
   import Routes from '@/references/route-constants'
 
@@ -49,6 +48,7 @@
         if (!this.isValidCredentials) {
           this.$showErrorNotification("Invalid Credentials")
         } else {
+          this.$hideErrorNotification()
           this.goToUsersPage()
         }
       },
