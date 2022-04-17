@@ -1,4 +1,4 @@
-import {MUTATE_SHOW_ERROR_NOTIFICATION} from '@/store/types';
+import {MUTATE_SHOW_ERROR_NOTIFICATION, MUTATE_SHOW_USER_MODAL} from '@/store/types';
 
 export default {
   install: function (Vue) {
@@ -13,6 +13,9 @@ export default {
         },
         $hideErrorNotification() {
           this.$store.commit(MUTATE_SHOW_ERROR_NOTIFICATION, {showError: false})
+        },
+        $toggleUserModal(showModal, selectedUser = null) {
+          this.$store.commit(MUTATE_SHOW_USER_MODAL, {showModal, selectedUser})
         }
       }
     })

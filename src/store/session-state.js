@@ -1,9 +1,11 @@
-import {GET_SESSION_STATE, MUTATE_SHOW_ERROR_NOTIFICATION} from '@/store/types';
+import {GET_SESSION_STATE, MUTATE_SHOW_ERROR_NOTIFICATION, MUTATE_SHOW_USER_MODAL} from '@/store/types';
 
 const state = {
   loggedIn: false,
   showErrorNotification: false,
-  errorText: ''
+  errorText: '',
+  showModal: false,
+  selectedUser: null
 }
 
 const mutations = {
@@ -13,6 +15,14 @@ const mutations = {
       state.errorText = errorText
     } else {
       state.errorText = ''
+    }
+  },
+  [MUTATE_SHOW_USER_MODAL]: (state, {showModal, selectedUser}) => {
+    state.showModal = showModal
+    if (showModal) {
+      state.selectedUser = selectedUser
+    } else {
+      state.selectedUser = null
     }
   }
 }

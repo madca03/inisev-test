@@ -43,10 +43,6 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    min-width: 30rem;
-    position: fixed;
-    left: 0;
 
     &__header {
       margin-bottom: 6rem;

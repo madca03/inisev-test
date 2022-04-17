@@ -34,8 +34,7 @@
     data() {
       return {
         username: null,
-        password: null,
-        hasError: false
+        password: null
       }
     },
     computed: {
